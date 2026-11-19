@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b18">
+<title>SHANMUKHA AI — Your creative space</title>
+<style>
+:root{color-scheme:dark;--bg:#090b18;--panel:#101429;--panel2:#151b35;--line:#262e50;--text:#f4f5ff;--muted:#9ba4c7;--a:#9b7cff;--b:#4de2d0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#29204e 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,Arial;min-height:100vh}
+button,textarea{font:inherit}button{cursor:pointer;color:inherit}.app{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+aside{border-right:1px solid var(--line);background:#0c1020eF;padding:22px 16px;display:flex;flex-direction:column;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;padding:4px 8px 18px}.logo{width:39px;height:39px;border-radius:14px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#080b18;font-weight:900;font-size:19px;box-shadow:0 0 28px #8d70ff55}.brand strong{letter-spacing:1.4px;font-size:14px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1px}
+.primary,.soft,.iconbtn{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--panel2);transition:.2s}.primary{background:linear-gradient(110deg,#8262ef,#3aafbd);border:0;color:white;font-weight:700}.primary:hover{filter:brightness(1.12);transform:translateY(-1px)}.soft:hover,.iconbtn:hover{border-color:var(--a)}
+.side-label{font-size:10px;letter-spacing:1.6px;color:#7882a9;padding:8px}.history{display:flex;flex-direction:column;gap:5px;overflow:auto}.history button{background:transparent;border:0;color:#c4cae2;text-align:left;padding:9px 10px;border-radius:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.history button:hover{background:var(--panel2)}.side-bottom{margin-top:auto;display:grid;gap:9px}.hint{color:var(--muted);font-size:11px;padding:8px}
+main{min-width:0;display:flex;flex-direction:column;min-height:100vh}.top{height:72px;border-bottom:1px solid #202744;display:flex;align-items:center;justify-content:space-between;padding:0 30px}.top-left{display:flex;align-items:center;gap:10px}.status{font-size:12px;color:var(--b)}.top-actions{display:flex;gap:8px;align-items:center}.pill{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:6px 10px;color:var(--muted)}
+.content{width:min(900px,100%);margin:0 auto;padding:50px 24px 26px;flex:1;display:flex;flex-direction:column}.welcome{text-align:center;margin:auto auto 34px}.orb{width:66px;height:66px;border-radius:23px;margin:0 auto 20px;background:linear-gradient(135deg,#a78bfa,#42ded0);box-shadow:0 0 60px #886aff55;display:grid;place-items:center;color:#0b1021;font-size:30px;font-weight:900}.welcome h1{font-size:clamp(30px,5vw,46px);line-height:1.12;margin:0 0 12px;letter-spacing:-1.5px}.gradient{background:linear-gradient(90deg,#b69cff,#58e3d3);color:transparent;background-clip:text}.welcome p{color:var(--muted);margin:0}.suggestions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:24px auto 0;max-width:620px}.suggestions button{text-align:left;background:#11172c;border:1px solid var(--line);border-radius:14px;padding:13px;color:#dfe3fa}.suggestions button span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.messages{display:flex;flex-direction:column;gap:20px;padding-bottom:28px}.msg{display:flex;gap:12px;max-width:100%}.msg.user{justify-content:flex-end}.avatar{flex:0 0 30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#242044;color:#c7b6ff;font-weight:800}.bubble{max-width:min(720px,88%);padding:13px 16px;border:1px solid var(--line);background:#11172a;border-radius:4px 16px 16px 16px;white-space:pre-wrap;overflow-wrap:anywhere}.user .bubble{background:linear-gradient(130deg,#493d78,#214e60);border-color:#7161a4;border-radius:16px 4px 16px 16px}.bubble img{max-width:100%;max-height:260px;border-radius:10px;display:block;margin-top:10px}.composer-wrap{position:sticky;bottom:0;padding:16px 24px 22px;background:linear-gradient(transparent,var(--bg) 20%)}.composer{max-width:850px;margin:auto;border:1px solid #384064;background:#11162b;border-radius:20px;padding:12px;box-shadow:0 12px 55px #0008}.composer textarea{width:100%;resize:vertical;min-height:54px;max-height:180px;background:transparent;border:0;outline:0;color:var(--text);padding:5px 7px}.compose-row{display:flex;align-items:center;gap:8px}.compose-row .spacer{flex:1}.iconbtn{padding:9px 12px;background:#1a203a}.send{width:42px;height:42px;border-radius:13px;border:0;background:linear-gradient(135deg,#9b7cff,#43d7ce);color:#09101d;font-weight:900}.file-name{font-size:11px;color:var(--b);padding:3px 8px}.typing{color:var(--muted);font-size:13px;padding:6px}.footer{text-align:center;color:#6f789e;font-size:10px;padding:0 10px 12px}
+body.light{color-scheme:light;--bg:#f4f5fb;--panel:#fff;--panel2:#eceefa;--line:#d9ddef;--text:#171a2b;--muted:#68708e;background:radial-gradient(ellipse at 50% -20%,#ddd4ff 0,transparent 48%),var(--bg)}
+body.light aside{background:#f7f8ffed}body.light .top{border-color:var(--line)}body.light .bubble{background:#fff}body.light .user .bubble{background:#e9e3ff}body.light .composer{background:#fff}body.light .suggestions button{background:#fff;color:#252943}
+@media(max-width:760px){.app{grid-template-columns:1fr}aside{display:none}.top{padding:0 16px;height:60px}.content{padding:30px 15px 15px}.composer-wrap{padding:10px 12px 15px}.suggestions{grid-template-columns:1fr}.welcome{margin-top:50px}.pill{display:none}}
+</style></head>
+<body><div class="app">
+<aside>
+ <div class="brand"><div class="logo">S</div><div><strong>SHANMUKHA AI</strong><small>THINK · CREATE · EXPLORE</small></div></div>
+ <button class="primary" id="newChat">＋ &nbsp; New chat</button>
+ <div><div class="side-label">YOUR CONVERSATIONS</div><div class="history" id="history"></div></div>
+ <div class="side-bottom"><button class="soft" id="themeBtn">☼ &nbsp; Toggle appearance</button><div class="hint">Your chat history is stored in this browser only.</div></div>
+</aside>
+<main>
+ <header class="top"><div class="top-left"><div class="logo" style="width:32px;height:32px;border-radius:11px">S</div><strong>SHANMUKHA AI</strong><span class="status">● READY</span></div><div class="top-actions"><span class="pill">TELUGU + ENGLISH</span><button class="iconbtn" id="mobileTheme" title="Toggle theme">☼</button></div></header>
+ <section class="content">
+  <div class="welcome" id="welcome"><div class="orb">S</div><h1>Ideas begin with <span class="gradient">you.</span></h1><p>Ask in Telugu or English. Let's make something amazing.</p>
+   <div class="suggestions">
+    <button data-prompt="Explain artificial intelligence in simple Telugu.">✦ Explain AI <span>Simple Telugu explanation</span></button>
+    <button data-prompt="Give me 5 creative YouTube thumbnail ideas.">▧ Thumbnail ideas <span>Make your next concept</span></button>
+    <button data-prompt="Write a short, engaging story about a mysterious ancient city.">✎ Write a story <span>Start with one idea</span></button>
+    <button data-prompt="Teach me 5 useful English sentences with Telugu meanings.">文 Learn English <span>English + Telugu practice</span></button>
+   </div>
+  </div>
+  <div class="messages" id="messages"></div>
+ </section>
+ <div class="composer-wrap"><div class="composer">
+  <div class="file-name" id="fileName"></div>
+  <textarea id="prompt" placeholder="Message SHANMUKHA AI… (తెలుగులో కూడా అడగవచ్చు)" rows="2"></textarea>
+  <div class="compose-row"><input id="imageInput" type="file" accept="image/*" hidden><button class="iconbtn" id="uploadBtn" title="Upload image">＋ Image</button><button class="iconbtn" id="imageMode" title="Image generation prompt">✧ Create image</button><span class="spacer"></span><span class="pill">Enter ↵</span><button class="send" id="sendBtn" title="Send">➤</button></div>
+ </div><div class="footer">AI can make mistakes. Check important information.</div></div>
+</main></div>
+<script>
+const $=id=>document.getElementById(id);
+let chats=JSON.parse(localStorage.getItem('shanmukha_chats')||'[]'), current=null, attached=null, generatingImage=false;
+function save(){localStorage.setItem('shanmukha_chats',JSON.stringify(chats));renderHistory()}
+function newChat(){current={id:Date.now(),title:'New conversation',messages:[]};chats.unshift(current);save();render()}
+function renderHistory(){$('history').innerHTML='';chats.forEach(c=>{let b=document.createElement('button');b.textContent='◦  '+c.title;b.onclick=()=>{current=c;render()};$('history').append(b)})}
+function render(){ $('messages').innerHTML='';$('welcome').style.display=current&&current.messages.length?'none':'block';if(!current)return;current.messages.forEach(m=>addBubble(m.role,m.text,m.image,false));}
+function addBubble(role,text,image,scroll=true){const row=document.createElement('div');row.className='msg '+(role==='user'?'user':'');if(role!=='user'){let a=document.createElement('div');a.className='avatar';a.textContent='S';row.append(a)}let b=document.createElement('div');b.className='bubble';b.textContent=text||'';if(image){let im=document.createElement('img');im.src=image;b.append(im)}row.append(b);$('messages').append(row);if(scroll)row.scrollIntoView({behavior:'smooth',block:'end'})}
+function store(role,text,image){current.messages.push({role,text,image:image||null});if(current.messages.length===1)current.title=text.slice(0,32)||'Image conversation';save()}
+async function send(){let text=$('prompt').value.trim();if(!text&&!attached)return;if(!current)newChat();$('welcome').style.display='none';const img=attached?.url||null;store('user',(generatingImage?'✧ Image request: ':'')+text,img);addBubble('user',(generatingImage?'✧ Image request: ':'')+text,img);$('prompt').value='';$('fileName').textContent='';attached=null;let typing=document.createElement('div');typing.className='typing';typing.textContent=generatingImage?'Creating your image…':'SHANMUKHA AI is thinking…';$('messages').append(typing);
+ try{
+   if(generatingImage){
+     const res=await fetch('/api/image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:text})});
+     const data=await res.json();if(!res.ok)throw new Error(data.error||'Image generation failed');
+     typing.remove();const url=`data:${data.mimeType||'image/png'};base64,${data.data}`;
+     addBubble('assistant','Your generated image:',url);store('assistant','Image generated (preview only).');
+   } else {
+     let history=current.messages.slice(0,-1).filter(m=>m.role==='user'||m.role==='assistant').slice(-12).map(m=>({role:m.role,text:m.text}));
+     let payload={message:text,history};if(img)payload.image={mimeType:currentImageMime,data:img.split(',')[1]};
+     let res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+     let data=await res.json();if(!res.ok)throw new Error(data.error||'Request failed');
+     typing.remove();store('assistant',data.text);addBubble('assistant',data.text);
+   }
+ }catch(e){typing.remove();let msg='Could not complete: '+e.message+'. Check your API key, model access and deployment settings.';store('assistant',msg);addBubble('assistant',msg)}
+ finally{generatingImage=false;$('imageMode').style.borderColor='';$('imageMode').textContent='✧ Create image'}
+}
+let currentImageMime='image/png';
+$('sendBtn').onclick=send;$('prompt').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}});
+$('newChat').onclick=newChat;$('themeBtn').onclick=$('mobileTheme').onclick=()=>{document.body.classList.toggle('light');localStorage.setItem('shanmukha_light',document.body.classList.contains('light'))};
+if(localStorage.getItem('shanmukha_light')==='true')document.body.classList.add('light');
+$('uploadBtn').onclick=()=>$('imageInput').click();$('imageInput').onchange=e=>{let f=e.target.files[0];if(!f)return;if(f.size>4*1024*1024){alert('Please choose an image smaller than 4 MB.');return}currentImageMime=f.type;let r=new FileReader();r.onload=()=>{attached={url:r.result};$('fileName').textContent='Image attached: '+f.name};r.readAsDataURL(f)};
+document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=()=>{$('prompt').value=b.dataset.prompt;$('prompt').focus()});
+$('imageMode').onclick=()=>{generatingImage=!generatingImage;$('imageMode').style.borderColor=generatingImage?'#9b7cff':'';$('imageMode').textContent=generatingImage?'✧ Image mode ON':'✧ Create image';$('prompt').placeholder=generatingImage?'Describe the image you want to generate…':'Message SHANMUKHA AI… (తెలుగులో కూడా అడగవచ్చు)';$('prompt').focus()};
+renderHistory();if(chats.length){current=chats[0];render()}
+</script></body></html>
